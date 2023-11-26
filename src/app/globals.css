@@ -4,6 +4,6 @@
 
 @layer components {
 	.underline-row {
-		@apply gap-y-1 max-w-[60ch] [&>li:not(.no-row)]:relative [&>li:not(.no-row)]:after:absolute [&>li:not(.no-row)]:after:left-0 [&>li:not(.no-row)]:after:-bottom-0.5 [&>li:not(.no-row)]:after:w-full [&>li:not(.no-row)]:after:h-[0.025rem] [&>li:not(.no-row)]:after:bg-neutral/50 [&>li:not(.no-row)]:min-h-[1.5rem];
+		@apply gap-y-1 max-w-[60ch] [&>li:not(.no-row)]:relative [&>li:not(.no-row)]:after:absolute [&>li:not(.no-row)]:after:left-0 [&>li:not(.no-row)]:after:-bottom-0 [&>li:not(.no-row)]:after:w-full [&>li:not(.no-row)]:after:h-[0.025rem] [&>li:not(.no-row)]:after:bg-neutral/50 [&>li:not(.no-row)]:min-h-[1.5rem] [&_*]:transition-colors;
 	}
 }

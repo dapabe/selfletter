@@ -1,7 +1,15 @@
+"use client";
 import React from "react";
 
+const detectDeviceType = () =>
+	/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
+		navigator.userAgent
+	)
+		? "Mobile"
+		: "Desktop";
+
 export const formatParagraph = (text: string) => {
-	const maxLength = 60;
+	const maxLength = detectDeviceType() === "Mobile" ? 30 : 60;
 
 	if (text.length >= maxLength) {
 		const chunks = [];
@@ -17,32 +25,30 @@ export const formatParagraph = (text: string) => {
 		}
 		chunks.push(currentChunk);
 
-		return (
-			<li>
-				{chunks.map((chunk, index) => (
-					<span key={index}>
-						{chunk.map((word, wordIndex) => (
-							<React.Fragment key={wordIndex}>
-								{word.includes("|") ? (
-									<React.Fragment>
-										{word.split("|").map((part, partIndex) => (
-											<React.Fragment key={partIndex}>
-												{partIndex === 1 ? <b>{part}</b> : part}
-											</React.Fragment>
-										))}
-										{word.endsWith("|") ? " " : ""}
-									</React.Fragment>
-								) : (
-									word
-								)}
-								{wordIndex < chunk.length - 1 && " "}
-							</React.Fragment>
-						))}
-						{index < chunks.length - 1 && " "}
-					</span>
-				))}
+		return chunks.map((chunk, index) => (
+			<li key={index}>
+				<span>
+					{chunk.map((word, wordIndex) => (
+						<React.Fragment key={wordIndex}>
+							{word.includes("|") ? (
+								<React.Fragment>
+									{word.split("|").map((part, partIndex) => (
+										<React.Fragment key={partIndex}>
+											{partIndex === 1 ? <b>{part}</b> : part}
+										</React.Fragment>
+									))}
+									{word.endsWith("|") ? " " : ""}
+								</React.Fragment>
+							) : (
+								word
+							)}
+							{wordIndex < chunk.length - 1 && " "}
+						</React.Fragment>
+					))}
+					{index < chunks.length - 1 && " "}
+				</span>
 			</li>
-		);
+		));
 	} else {
 		return (
 			<li>

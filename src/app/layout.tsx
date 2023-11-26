@@ -7,12 +7,7 @@ const inter = Inter({ subsets: ["latin"] });
 export const metadata: Metadata = {
 	title: "Con cariño, al futuro.",
 	description: "Para mi persona significante",
-	// icons: [
-	// 	{
-	// 		href: "/sunflower.svg",
-
-	// 	},
-	// ],
+	icons: {},
 };
 
 export default function RootLayout({
@@ -21,7 +16,15 @@ export default function RootLayout({
 	children: React.ReactNode;
 }) {
 	return (
-		<html lang="es" data-theme="retro">
+		<html lang="es" data-theme="cmyk">
+			<head>
+				<link
+					rel="icon"
+					href="/icon?<generated>"
+					type="image/svg"
+					sizes="any"
+				/>
+			</head>
 			<body>{children}</body>
 		</html>
 	);

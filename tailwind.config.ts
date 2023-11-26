@@ -18,7 +18,7 @@ const config: Config & { daisyui: DayConfig } = {
 	},
 	plugins: [require("daisyui")],
 	daisyui: {
-		themes: ["retro"],
+		themes: ["retro", "cmyk"],
 	},
 };
 export default config;
