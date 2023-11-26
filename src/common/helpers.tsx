@@ -9,7 +9,7 @@ const detectDeviceType = () =>
 		: "Desktop";
 
 export const formatParagraph = (text: string) => {
-	const maxLength = detectDeviceType() === "Mobile" ? 30 : 60;
+	const maxLength = detectDeviceType() === "Mobile" ? 40 : 60;
 
 	if (text.length >= maxLength) {
 		const chunks = [];

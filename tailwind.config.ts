@@ -9,6 +9,9 @@ const config: Config & { daisyui: DayConfig } = {
 	],
 	theme: {
 		extend: {
+			fontFamily: {
+				Kalam: ["Kalam", "cursive"],
+			},
 			backgroundImage: {
 				"gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
 				"gradient-conic":

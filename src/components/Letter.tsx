@@ -1,6 +1,6 @@
 "use client";
 
-import { FC, useState } from "react";
+import { FC } from "react";
 import { Icon } from "./Icon";
 import { useToggle } from "$/hooks/useToggle";
 import { formatParagraph } from "$/common/helpers";
@@ -14,7 +14,6 @@ interface Props {
 
 export const Letter: FC<Props> = ({ paragraph, date, header }) => {
 	const [isOpen, toggleEye] = useToggle();
-	// const [num, setnum] = useState<number>(0)
 
 	return (
 		<article
@@ -35,9 +34,8 @@ export const Letter: FC<Props> = ({ paragraph, date, header }) => {
 			<div className="absolute -bottom-10 -right-8 w-24 h-16">
 				<Image src={"/cloud-bg.png"} alt="Cloud" fill />
 			</div>
-			<section className="absolute -right-2 -top-2 p-2 bg-base-100 outline outline-1 outline-base-200 rounded-md shadow-md font-mono">
+			<section className="absolute -right-2 -top-2 p-2 bg-base-100 outline outline-1 outline-base-200 rounded-md shadow-lg font-mono">
 				<div className="absolute bottom-full -right-4 w-10 h-10">
-					{/* <Image src={"/beetle.svg"} alt="Girasol" fill /> */}
 					<Icon.Sunflower />
 				</div>
 				<time className="z-20">{date}</time>

@@ -2,12 +2,12 @@ import { Letter } from "$/components/Letter";
 
 export default function Home() {
 	return (
-		<main className="flex min-h-screen justify-center items-center flex-col">
+		<main className="flex min-h-screen justify-center items-center flex-col font-Kalam">
 			<h1
 				data-theme="retro"
-				className="text-center px-4 py-2 roudned-t-md outline outline-1 outline-base-200"
+				className="text-center px-4 py-2 rounded-t-lg outline outline-1 outline-base-200"
 			>
-				Palabra de hoy: Honestidad
+				Tema: Honestidad
 			</h1>
 			<Letter
 				date="15/01/2023"
